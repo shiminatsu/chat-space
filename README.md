@@ -1,4 +1,4 @@
-#messagesテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -6,43 +6,42 @@
 |body|text|null: false: true|
 |image|string|null: false: true|
 
-#Association
-- belongs_to :users
-- belongs_to :groupes
+### Association
+- belongs_to :user
+- belongs_to :group
 
 
-## usersテーブル
+## userテーブル
 |Column|Type|Options|
 |---------|-------|
-|user_name|string|null: false|
+|user_name|string|null: false, unique: true, index: true|
 |email|string|null: false|
 |password|string|null: false|
 
 ### Association
 - has_many  :messages
-- has_many  :tags
-- has_many  :groupes,  through:  :tags
-- add_index :users,  :user_name
+- has_many  :groups_users
+- has_many  :group,  through:  :groups_users
 
 
-## groupesテーブル
+## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupe_name|string|null: false|
+|group_name|string|null: false|
 
 ### Association
-- has_many  :tags
-- has_many  :users,  through:  :tags
+- has_many  :groups_users
+- has_many  :user,  through:  :groups_users
 
 
-## tagsテーブル
+## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :users
-- belongs_to :groupes
+- belongs_to :user
+- belongs_to :group
 
 
