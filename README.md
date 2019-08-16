@@ -13,7 +13,7 @@
 
 ## userテーブル
 |Column|Type|Options|
-|---------|-------|
+|------|----|-------|
 |user_name|string|null: false, unique: true, index: true|
 |email|string|null: false|
 |password|string|null: false|
