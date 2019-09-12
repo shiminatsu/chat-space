@@ -1,0 +1,166 @@
+.sidevar{
+  background-color: #2f3e51;
+  width: 300px;
+  height: 100vh;
+  box-sizing: border-box;
+  float: left;
+    &__userblock{
+       background-color: #253141;
+       height: $Side-height;
+       line-height: $Side-height;
+       padding: 0 20px;
+        &__username{
+          display: inline-block;
+          font-size: $Buser-font;
+          font-weight: bold;
+          color: $white;
+        }
+        &__config{
+          display: inline-block;
+          float: right;
+            &__configimage{
+              display: inline-block;
+            }
+            .icon{
+              color: $white;
+              font-size: $Buser-font;
+            }
+        }
+    }
+    &__groupblock{
+      color: $white;
+      height: calc(100vh - 100px);
+      text-align: left;
+      padding: 0 20px;
+        &__group{
+          box-sizing: border-box;
+          padding: 20px 0 40px;
+            &__groupname{
+              font-size: 15px;
+              color: $white;
+            }
+            &__message{
+              font-size: 11px;
+              color: $white;
+              margin-top: 5px;
+            }
+          }  
+    }
+}
+
+.chatspace{
+  background-color: $thin_grey;
+  width: calc(100vw -  300px);
+  height: 100vh;
+  float:right;
+  position: relative;
+    .groupblock{
+      height: 100px;
+      border-bottom: 2px solid #eeeeee;
+      position: relative;
+        &__groupname{
+          color: #333333;
+          font-size: 20px;
+          position: absolute;
+          top: 35px;
+          bottom: 27px;
+          left: 40px;
+          display: inline-block;
+        }
+        &__memberlist{
+          display: flex;
+          font-size: 12px;
+          color: $light_grey;
+          position: absolute;
+          top: 82px;
+          left: 40px;
+          &__membername{
+            display: inline-block;
+            text-align: left;
+            padding-right: 5px;
+          }
+        }
+        &__editbutton{
+          color: $aqua;
+          font-weight: bold;
+          border: 1px solid $aqua;
+          font-size: 12px;
+          padding: 0 20px;
+          text-align: center;
+          display: inline-block;
+          margin-top: 28px;
+          line-height: 40px;
+          float: right;
+          position: absolute;
+          right: 40px;
+        }
+    }
+    .chatblock{
+      background-color: $thin_grey;
+      height: calc(100% - 100px - 90px);
+      position: relative;
+      box-sizing: border-box;
+      padding: 46px 40px 0;
+        &__sendinfo{
+          display: flex;
+            &__username{
+              color: $light_black;
+              font-weight: bold;
+              font-size: 16px;
+            }
+            &__date{
+              color: $light_grey;
+              font-weight: bold;
+              font-size: 12px;
+              padding-left: 10px;
+            }
+        }
+        &__message{
+          margin-top: 10px;
+            &__contents{
+              color:  $light_black;
+              font-size: 14px;
+              text-align: left;
+              margin-bottom: 40px;
+            }
+        }
+      }
+    .form {					
+      background-color: #DDDDDD;					
+      box-sizing: border-box;					
+      height: 90px;	
+      bottom: 0px;				
+      padding: 20px 50px 20px 40px;
+      display: inline-block;
+      width: calc(100vw -  300px);		
+        &__message {					
+          border: none;					
+          float: left;					
+          height: 50px;					
+          width: calc(100% - 150px);					
+        }					
+        &__mask {					
+          background-color: $white;					
+          float: left;					
+          height: 50px;					
+          padding-right: 10px;					
+          &__image {					
+            font-size: 20px;					
+            line-height: 50px;					
+          }					
+          .hidden {					
+            display: none;					
+          }					
+        }					
+        &__submit {					
+          background-color: $aqua;		
+          border: none;					
+          color: $white;					
+          float: right;					
+          font-size: 16px;					
+          height: 50px;					
+          margin-left: 15px;					
+          padding: 0 30px;					
+        }					
+    }					
+}
