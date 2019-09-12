@@ -1,7 +1,8 @@
 @import "variable/color";
-@import "variable/pix-size";
+@import "variable/px-size";
 @import "reset";
-@import "messages/messages.scss";
 @import "font-awesome";
 @import "modules/user";
 @import "modules/flash";
+@import "modules/group";
+@import "messages/messages.scss";
