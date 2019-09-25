@@ -1,59 +1,39 @@
-.header
-  .header__logo
+.wrapper
 
-#main.contents
-  %div.sidevar
-    .sidevar__userblock
-      %h3.sidevar__userblock__username
-        = current_user.name
-      %ul.sidevar__userblock__config
-        %li.sidevar__userblock__config__configimage
-          = link_to new_group_path do
-            = fa_icon 'pencil-square-o', class: 'icon'
-        %li.sidevar__userblock__config__configimage
-          = link_to edit_user_path(current_user) do
-            = fa_icon 'cog', class: 'icon'
-    .sidevar__groupblock
-      .sidevar__groupblock__group
-        .sidevar__groupblock__group__groupname
-          TestName
-        .sidevar__groupblock__group__message
-          TestMessage
+  = render 'shared/side_bar'
 
-  %div.chatspace
-    %div.groupblock
-      .groupblock__groupname
-        test3
-      %ul.groupblock__memberlist
-        Member : 
-        %li.groupblock__memberlist__membername
-          XXXXX
-        %li.groupblock__memberlist__membername
-          YYYYY
-      .groupblock__editbutton
-        Edit
-    %div.chatblock
-      .chatblock__sendinfo
-        .chat_block__sendinfo_username
-          test-user
-        .chatblock__sendinfo__date
-          yyyymmdd
-      .chatblock__message
-        .chatblock__message__contents
-          hello 
-      .chatblock__sendinfo
-        .chat_block__sendinfo_username
-          test-user2
-        .chatblock__sendinfo__date
-          yyyymmdd
-      .chatblock__message
-        .chatblock__message__contents
-          bye 
-    %div.form
-      %form
-        %input.form__message
+  .chatblock
+    .header
+      .left-block
+        .left-block__title
+          グループ名
+        %ul.left-block__members
+          Member：
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+      .right-block
+        .right-block__button
+          Edit
+    .messagesblock
+      .message
+        .message-member
+          .message-member__user-name
+            メンバー
+          .message-member__date
+            YYYY/MM/DD
+        .message-title
+          .message-title__content
+            メッセージ
+
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
         .form__mask
-          %label.form__mask__image
+          = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
-            %input.hidden{type: 'file'}
-        %input.form__submit{type: 'submit', value: 'Send'}
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
