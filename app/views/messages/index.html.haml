@@ -19,15 +19,7 @@
         .right-block__button
           Edit
     .messagesblock
-      .message
-        .message-member
-          .message-member__user-name
-            メンバー
-          .message-member__date
-            YYYY/MM/DD
-        .message-title
-          .message-title__content
-            メッセージ
+      = render @messages
 
     .form
       = form_for [@group, @message] do |f|
