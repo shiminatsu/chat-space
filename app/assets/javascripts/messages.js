@@ -16,7 +16,7 @@ $(function(){
               ${message.content}
             </p>
           </div>
-          <img src=${message.image} >
+          <img src=${message.image}>
         </div>`
       return html;
     } else {
@@ -35,11 +35,12 @@ $(function(){
               ${message.content}
             </p>
           </div>
+          <img src="">
         </div>`
       return html;
     };
   }
-  $('#new_message.new_message').on('submit', function(e){
+  $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
@@ -53,13 +54,13 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').append(html);
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+      $('.message').append(html);
+      $('.message').animate({scrollTop: $('.message')[0].scrollHeight});
       $('form')[0].reset();
     })
     .fail(function(){
-      alert('error');
-    });
+      alert('error'); 
+    })
     return false;
-  });
+  })
 });
