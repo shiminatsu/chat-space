@@ -1,42 +1,29 @@
 $(function(){
   function buildHTML(message){
+    var imgbranch
+    var html =
+    `<div class="message" data-message-id=${message.id}>
+       <div class="message-member">
+         <div class="message-member__user-name">
+           ${message.user_name}
+         </div>
+         <div class="message-member__date">
+           ${message.date}
+         </div>  
+       </div>
+       <div class="message-title">
+         <p class="message-title__content">
+           ${message.content}
+         </p>
+       </div>
+       <img src　= imgbranch>
+     </div>`
+
     if ( message.image ) {
-      var html =
-       `<div class="message" data-message-id=${message.id}>
-          <div class="message-member">
-            <div class="message-member__user-name">
-              ${message.user_name}
-            </div>
-            <div class="message-member__date">
-              ${message.date}
-            </div>  
-          </div>
-          <div class="message-title">
-            <p class="message-title__content">
-              ${message.content}
-            </p>
-          </div>
-          <img src=${message.image}>
-        </div>`
+      imgbranch = $message.image
       return html;
     } else {
-      var html =
-       `<div class="message" data-message-id=${message.id}>
-          <div class="message-member">
-            <div class="message-member__user-name">
-              ${message.user_name}
-            </div>
-            <div class="message-member__date">
-              ${message.date}
-            </div>
-          </div>
-          <div class="message-title">
-            <p class="message-title__content">
-              ${message.content}
-            </p>
-          </div>
-          <img src="">
-        </div>`
+      imgbranch = ""
       return html;
     };
   }
