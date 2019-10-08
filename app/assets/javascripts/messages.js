@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    var imgbranch
+    imgbranch = (message.image) ? `<img class= "lower-message__image" src=${message.image} >` : ""; 
     var html =
     `<div class="message" data-message-id=${message.id}>
        <div class="message-member">
@@ -15,17 +15,10 @@ $(function(){
          <p class="message-title__content">
            ${message.content}
          </p>
-       </div>
-       <img src　= imgbranch>
+        ${imgbranch}
+       </div> 
      </div>`
-
-    if ( message.image ) {
-      imgbranch = $message.image
-      return html;
-    } else {
-      imgbranch = ""
-      return html;
-    };
+    return html;
   }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
