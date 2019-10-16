@@ -18,7 +18,7 @@ $(document).on('turbolinks:load', function(){
           `<div class="chat-group-user clearfix">
             <p class="chat-group-user__name">${msg}</p>
           </div>`;
-      error_msg.append(html);
+    error_msg.append(html);
     }
 
     function appendMembers(name, user_id){
@@ -68,8 +68,8 @@ $(document).on('turbolinks:load', function(){
 
  $(function () {
   $(document).on("click", '.user-search-add.chat-group-user__btn.chat-group-user__btn--add', function () {
-      var name = $(this).attr("data-user-name");
-      var user_id = $(this).attr("data-user-id");
+      var name = $(this).data('user-name');
+      var user_id = $(this).data('user-id');
       $(this).parent().remove();
       appendMembers(name, user_id);
   });
