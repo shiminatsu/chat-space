@@ -6,18 +6,16 @@
     .header
       .left-block
         .left-block__title
-          test
+          = @group.name
         %ul.left-block__members
           Member：
           %li.member
-            メンバー名
-          %li.member
-            メンバー名
-          %li.member
-            メンバー名
+            - @group.group_users.each do |group_user|
+              = group_user.user.name
       .right-block
         .right-block__button
-          = link_to 'Edit',new_group_path
+          = link_to edit_group_path(@group.id),class:"Edit" do
+            Edit
 
     .messagesblock
       = render @messages
