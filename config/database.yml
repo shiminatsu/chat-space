@@ -14,8 +14,8 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password:
-  socket: /tmp/mysql.sock
+  password: pass0728
+  socket: /var/lib/mysql/mysql.sock
 
 development:
   <<: *default
@@ -51,4 +51,4 @@ production:
   <<: *default
   database: chat-space_production
   username: chat-space
-  password: <%= ENV['pass0728'] %>
+  password: <%= ENV['CHAT-SPACE_DATABASE_PASSWORD'] %>
