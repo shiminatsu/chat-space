@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
+  dapter: mysql2
+  encoding: utf8
+  pool: 5
   database: chat-space_production
   username: root
   password: <%= ENV['CHAT-SPACE_DATABASE_PASSWORD'] %>
